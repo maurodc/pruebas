@@ -20,15 +20,8 @@ int main(int argc, char **argv){
     std::vector<KeyPoint> kp;
 
     Ptr<FeatureDetector> detector = FeatureDetector::create("ORB"); //detector generico
-    //    detector->set("nfeatures", 105);
+    detector->set("nFeatures", 105);
  
-    /* no se debe usar    
-    struct timeval ti, tf;  //tiempo inicial y final
-    gettimeofday(&ti, NULL);   // Instante inicial
-    gettimeofday(&tf, NULL);   // Detengo el COntador 
-    std::cout << "Tiempo de procesamiento: " << (tf.tv_sec - ti.tv_sec)*1000 + (tf.tv_usec - ti.tv_usec)/1000.0 << " milisegundos" << std::endl;
-    */
-
     //Cronometrando las operaciones
     #ifdef TIME
     double startStep, endStep;
@@ -44,13 +37,12 @@ int main(int argc, char **argv){
     std::cout << ">>> Se detectaron " << kp.size() << " Keypoints" << std::endl;
     
     Mat out;  
-    drawKeypoints(img, kp, out, Scalar::all(255)); //dibujo los features en la img
+    drawKeypoints(img, kp, out, Scalar::all(-1)); //dibujo los features en la img
     imshow("Intento 1 - KeyPoints", out);  //Muestro la img con los features
 
     
     Mat descriptors;
     Ptr<DescriptorExtractor> extractor = DescriptorExtractor::create("ORB");
-    // Ptr<DescriptorExtractor> descriptorExtr = ORB::create();
     extractor->compute(img, kp, descriptors);
    // std::cout << ">>> Se detectaron los siguientes descriptores \n" << descriptors << std::endl;
     

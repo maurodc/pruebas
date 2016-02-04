@@ -15,7 +15,7 @@ int main(int argc, char **argv){
 
 
 
-    Mat img = imread("../004530.png");
+    Mat img = imread("../src/004530.png");
     //Mat img = imread("../mon.jpg");
     std::vector<KeyPoint> kp;
 

@@ -1,3 +1,19 @@
-# Ignorar el contenido de las carpetas log y cache
+# Logs and databases 
+######################
+*.log
+
+# Images 
+##########
+*.pdf
+*.jpg
+
+# Temporal files
+##################
+*.*~
+
+# Folders
+##################
 build/
+
+
 

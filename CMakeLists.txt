@@ -2,7 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 PROJECT(Prueba_ORB)
 ADD_EXECUTABLE(myOrb Tiposgenericos.cpp)
 
-# Defino las macros para el preprocesador
+# Defino las flags para el preprocesador
 SET(CMAKE_CXX_FLAGS "-DTIME")
 
 # Busco paquetes 

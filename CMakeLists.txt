@@ -19,6 +19,7 @@ ENDIF()
 
 # Linkeo librerías
 TARGET_LINK_LIBRARIES(myOrb ${OpenCV_LIBS})
+TARGET_LINK_LIBRARIES(myOrb yaml-cpp)
 
 # Imprimo librerías cargadas
 MESSAGE(${OpenCV_LIBS}) 
